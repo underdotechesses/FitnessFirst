@@ -328,19 +328,19 @@ trainerCardContainer.addEventListener("click", (event) => {
 
     if (event.target.classList.contains("trainer__show-more")) {
         DATA.forEach((elem) => {
-            console.log(
-                elem.photo.split(".")[1] + "." + elem.photo.split(".")[2]
-            );
-            console.log(
-                event.target.parentElement
-                    .querySelector(".trainer__img")
-                    .src.split(`${protocol}//${host}`)[1]
-            );
+            // console.log(
+            //     elem.photo.split(".")[1] + "." + elem.photo.split(".")[2]
+            // );
+            // console.log(
+            //     event.target.parentElement
+            //         .querySelector(".trainer__img")
+            //         .src.split(`${protocol}//${host}`)[1]
+            // );
             if (
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split(`${protocol}//${host}`)[1]
+                    .src.split(`${protocol}//${host}/FitnessFirst`)[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
