@@ -330,7 +330,7 @@ trainerCardContainer.addEventListener("click", (event) => {
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split("http://127.0.0.1:5500/basic-js/step-project")[1]
+                    .src.split("http://127.0.0.1:5500")[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
