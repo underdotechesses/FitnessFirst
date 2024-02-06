@@ -326,11 +326,19 @@ trainerCardContainer.addEventListener("click", (event) => {
 
     if (event.target.classList.contains("trainer__show-more")) {
         DATA.forEach((elem) => {
+            // console.log(
+            //     elem.photo.split(".")[1] + "." + elem.photo.split(".")[2]
+            // );
+            // console.log(
+            //     event.target.parentElement
+            //         .querySelector(".trainer__img")
+            //         .src.split("https://underdotechesses.github.io/")[1]
+            // );
             if (
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split("http://127.0.0.1:5500")[1]
+                    .src.split("https://underdotechesses.github.io/")[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
