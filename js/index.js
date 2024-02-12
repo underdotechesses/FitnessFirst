@@ -323,8 +323,8 @@ sortSection.hidden = false;
 trainerCardContainer.addEventListener("click", (event) => {
     const modal = modalTemplate.cloneNode(true);
     const modalClose = modal.querySelector(".modal__close");
-    const protocol = window.location.protocol;
-    const host = window.location.host;
+    // const protocol = window.location.protocol;
+    // const host = window.location.host;
 
     if (event.target.classList.contains("trainer__show-more")) {
         DATA.forEach((elem) => {
@@ -334,13 +334,22 @@ trainerCardContainer.addEventListener("click", (event) => {
             // console.log(
             //     event.target.parentElement
             //         .querySelector(".trainer__img")
-            //         .src.split(`${protocol}//${host}`)[1]
+            //         .src.split(
+            //             location.origin +
+            //                 location.pathname.split("/index.html")[0]
+            //         )[1]
+            // );
+            // console.log(
+            //     location.origin + location.pathname.split("/index.html")[0]
             // );
             if (
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split(`${protocol}//${host}/FitnessFirst`)[1]
+                    .src.split(
+                        location.origin +
+                            location.pathname.split("/index.html")[0]
+                    )[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
@@ -380,7 +389,7 @@ sortSectionList.forEach((elem) => {
 // Сортировка карточек
 
 const sortCards = (data) => {
-    if (savedSortButton !== null && savedSortButton !== 0) {
+    if (savedSortButton) {
         sortSectionList[savedSortButton].classList.toggle(
             "sorting__btn--active"
         );
